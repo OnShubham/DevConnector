@@ -1,4 +1,5 @@
 {
+  "mongoURI": "mongodb+srv://DevConnector:DevConnector@cluster1.pwnvksv.mongodb.net/?retryWrites=true&w=majority",
+  "jwt" : "secret"
 
-    "mongoURI": "mongodb+srv://DevConnector:DevConnector@cluster1.pwnvksv.mongodb.net/?retryWrites=true&w=majority"
 }
