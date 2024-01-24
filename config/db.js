@@ -6,6 +6,8 @@ const connectDB = async () => {
   try {
     await mongoose.connect(db, {
       useNewUrlParser: true,
+      // useCreateIndex: true, // DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+      // useFindAndModify: false, // DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
 
       
     });
