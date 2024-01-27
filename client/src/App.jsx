@@ -7,8 +7,8 @@ import {
 
 import Navbar from "./Components/Layout/Navbar";
 import Landing from "./Components/Layout/Landing";
-import Register from "./Components/Layout/auth/Register"; // Make sure this path is correct
-import Login from "./Components/Layout/auth/Login"; // Make sure this path is correct
+import Register from "./Components/.auth/Register"; // Make sure this path is correct
+import Login from "./Components/auth/Login"; // Make sure this path is correct
 
 import "./App.css";
 
