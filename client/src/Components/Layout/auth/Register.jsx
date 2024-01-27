@@ -1,28 +1,30 @@
-import e from "express";
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: "",
+    name: '',
+    email: '',
+    password: '',
+    password2: '',
   });
 
   const { name, email, password, password2 } = formData;
 
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setFormData({ ...formData, [e.target.email]: e.target.value });
-    setFormData({ ...formData, [e.target.password]: e.target.value });
-    setFormData({ ...formData, [e.target.password2]: e.target.value });
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Passwords do not match");
+      console.log('Passwords do not match');
     } else {
-      console.log("Success");
+      console.log('Success');
     }
   };
 
@@ -32,14 +34,14 @@ function Register() {
       <p className="lead">
         <i className="fas fa-user"></i> Create Your Account
       </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="text"
             placeholder="Name"
             name="name"
             value={name}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -49,7 +51,7 @@ function Register() {
             placeholder="Email Address"
             name="email"
             value={email}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
           <small className="form-text">
@@ -64,7 +66,7 @@ function Register() {
             name="password"
             minLength="6"
             value={password}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -75,14 +77,14 @@ function Register() {
             name="password2"
             minLength="6"
             value={password2}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <Link to="login">Sign In</Link>
+        Already have an account? <Link to="/login">Sign In</Link>
       </p>
     </Fragment>
   );
