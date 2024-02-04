@@ -4,8 +4,9 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
+import { register } from "../../actions/auth";
 
-function Register({ setAlert }) {
+function Register({ setAlert, register }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,23 +29,7 @@ function Register({ setAlert }) {
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      const newUser = {
-        name,
-        email,
-        password,
-      };
-      try {
-        const config = {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        };
-        const body = JSON.stringify(newUser);
-        const res = await axios.post("/api/users", body, config);
-        console.log(res.data);
-      } catch (err) {
-        console.error(err.response.data);
-      }
+      register({ name, email, password });
     }
   };
 
@@ -101,7 +86,7 @@ function Register({ setAlert }) {
             required
           />
         </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <button type="submit"   className="btn btn-primary" value="Register" > Register </button>
       </form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
@@ -110,6 +95,9 @@ function Register({ setAlert }) {
   );
 }
 
-Register.propTypes = { setAlert: PropTypes.func.isRequired }; 
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+};
 
 export default connect(null, { setAlert })(Register);
