@@ -10,6 +10,9 @@ DevConnector is a vibrant platform 🚀 designed to bring the developer communit
 
 
 Key Highlights:
+
+
+
 🛠️ Crafted a full-stack social network application that is intuitive and user-friendly.
 🔧 Developed an extensive backend API with Express, ensuring seamless data management and integration.
 🔑 Implemented stateless JWT authentication to secure the platform, prioritizing user privacy and security.
