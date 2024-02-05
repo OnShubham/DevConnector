@@ -17,7 +17,7 @@ Key Highlights:
 🔧 Developed an extensive backend API with Express, ensuring seamless data management and integration.
 🔑 Implemented stateless JWT authentication to secure the platform, prioritizing user privacy and security.
 🔄 Integrated React with an Express backend efficiently, showcasing a harmonious blend of frontend and backend technologies.
-Throughout this journey, I've not only honed my technical skills but also learned to weave React components with Express in an elegant manner, ensuring a seamless user experience.
+Throughout this journey, I've not only honed my technical skills but also learned to weave React components with Express in an elegant manner, ensuring a seamless user experience...
 
 
 
